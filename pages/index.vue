@@ -45,7 +45,6 @@ export default {
       this.$router.push(`/comments/${commentId}`);
     },
 
-
     async goToPage(page) {
       this.page = page;
       await this.fetchComments();
