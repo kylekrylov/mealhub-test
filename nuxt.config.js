@@ -16,6 +16,10 @@ export default {
     ]
   },
 
+  server: {
+    port: 4000
+  },
+
   router: {
     base: '',
     trailingSlash: false
