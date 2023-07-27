@@ -75,27 +75,25 @@ export default {
 
 <template>
   <div>
-    <div class="container">
-      <div class="header">ID</div>
-      <div class="header">Name</div>
-      <div class="header">Email</div>
-      <div class="header">Link</div>
-    </div>
-    <div
-      v-for="comment in comments"
-      :key="comment.id"
-      class="row"
-    >
-      <div class="cell">{{ comment.id }}</div>
-      <div class="cell">{{ comment.name }}</div>
-      <div class="cell">{{ comment.email }}</div>
-      <div class="cell">
-        <button class="button" @click="goToComment(comment.id)">
-          detail
-        </button>
+    <div class="table">
+      <div class="container">
+        <div class="header">ID</div>
+        <div class="header">Name</div>
+        <div class="header">Email</div>
+      </div>
+      <div
+        v-for="comment in comments"
+        :key="comment.id"
+        class="row"
+        @click="goToComment(comment.id)"
+
+        :title="comment.name"
+      >
+        <div class="cell">{{ comment.id }}</div>
+        <div class="cell">{{ comment.name }}</div>
+        <div class="cell">{{ comment.email }}</div>
       </div>
     </div>
-
     <div class="pagination">
       <button
         class="button"
@@ -129,10 +127,13 @@ export default {
 </template>
 
 <style>
+.table {
+  max-width: 768px;
+}
 
 .container {
   display: grid;
-  grid-template-columns: auto 1fr 1fr 1fr;
+  grid-template-columns: auto 1fr 1fr;
   padding: 12px;
 }
 
@@ -156,9 +157,10 @@ export default {
 .row {
   display: grid;
   align-items: center;
-  grid-template-columns: auto 1fr 1fr 1fr;
+  grid-template-columns: auto 1fr 1fr;
   padding: 12px;
   border: 1px solid #ccc;
+  cursor: pointer;
 }
 
 .cell {
@@ -169,8 +171,19 @@ export default {
   background-color: #f2f2f2;
 }
 
+.row:nth-child(even):hover ,
+.row:hover {
+  background-color: #d4d4d4;
+}
+
 .row td {
-  padding: 5px;
+  padding: 4px;
+}
+
+.pagination {
+  display: flex;
+  margin-top: 12px;
+  gap: 8px;
 }
 
 .button {
@@ -193,9 +206,4 @@ export default {
   background-color: #77a045;
 }
 
-.pagination {
-  display: flex;
-  margin-top: 12px;
-  gap: 8px;
-}
 </style>

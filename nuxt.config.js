@@ -46,7 +46,7 @@ export default {
   ],
 
   axios: {
-    baseURL: 'https://jsonplaceholder.typicode.com',
+    baseURL: 'https://jsonplaceholder.typicode.com'
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
