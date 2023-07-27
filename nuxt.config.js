@@ -16,15 +16,15 @@ export default {
     ]
   },
 
-  router: {
-    extendRoutes(routes, resolve) {
-      routes.push({
-        name: 'comment',
-        path: '/comments/comment-:commentId',
-        component: resolve(__dirname, 'pages/comments/comment-id.vue')
-      });
-    }
-  },
+  // router: {
+  //   extendRoutes(routes, resolve) {
+  //     routes.push({
+  //       name: 'comment',
+  //       path: '/comments/comment-:commentId',
+  //       component: resolve(__dirname, 'pages/comments/comment-id.vue')
+  //     });
+  //   }
+  // },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [

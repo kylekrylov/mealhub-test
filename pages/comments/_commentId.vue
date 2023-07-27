@@ -9,9 +9,7 @@
 <script>
 export default {
   async asyncData({ params, $axios }) {
-    const commentId = params.commentId.replace('comment-', '');
-    const response = await $axios.get(`/comments/${commentId}`);
-
+    const response = await $axios.get(`/comments/${params.commentId}`);
     return { comment: response.data };
   },
 };

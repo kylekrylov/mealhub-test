@@ -42,7 +42,7 @@ export default {
     },
 
     goToComment(commentId) {
-      this.$router.push(`/comments/comment-${commentId}`);
+      this.$router.push(`/comments/${commentId}`);
     },
 
 
